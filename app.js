@@ -9,6 +9,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Carrega todas as scripts da pasta controller e routes
+//load("controllers") .then("routes")  .into(app);
+
+// Define a pasta public para conteúdo estático
+app.use(express.static(__dirname + "/public"));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -19,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// rotas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
