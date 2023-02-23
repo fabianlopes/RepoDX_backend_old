@@ -12,7 +12,7 @@ async function connect() {
     return singleton;
 }
 
-const COLLECTION = "tecnicas";
+const COLLECTION = "tecnicas_tag";
  
 async function findAll() {
     const db = await connect();
